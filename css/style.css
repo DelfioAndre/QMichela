@@ -56,11 +56,13 @@
          position: relative;
          overflow: hidden;
          background:
-            radial-gradient(ellipse at 85% 20%, rgba(185, 101, 69, .35) 0, transparent 30%),
-            linear-gradient(120deg, var(--forest-dark), var(--forest-light));
-         color: var(--on-dark);
-         padding: 30px 24px 58px;
-         box-shadow: inset 0 -1px 0 rgba(255,255,255,.08)
+            radial-gradient(circle at 88% 20%, rgba(207,178,112,.14), transparent 28%),
+            linear-gradient(120deg, #183a43 0%, #244e57 100%);
+         color: #fffaf0;
+         padding: 20px 24px 28px;
+         box-shadow:
+            inset 0 -3px 0 rgba(207,178,112,.48),
+            inset 0 -1px 0 rgba(255,255,255,.12)
       }
 
       .wrap {
@@ -76,43 +78,45 @@
       }
 
       .mark {
-         border: 1px solid var(--on-dark-border);
+         border: 1px solid rgba(207,178,112,.58);
          border-radius: 50%;
-         width: 50px;
-         height: 50px;
+         width: 38px;
+         height: 38px;
          display: grid;
          place-items: center;
-         color: var(--accent);
-         font-size: 25px;
-         background: #ffffff0a
+         color: #cfb270;
+         font-size: 18px;
+         background: rgba(255,250,240,.06);
+         box-shadow: 0 4px 14px rgba(7,25,29,.18)
       }
 
       .brand small {
          display: block;
          font-size: 9px;
          letter-spacing: 2.2px;
-         color: var(--on-dark-muted)
+         color: #d9d0b4
       }
 
       .brand strong {
          display: block;
          margin-top: 3px;
-         font: 600 23px/1.2 var(--font-display);
-         letter-spacing: 1.4px
+         font: 600 20px/1.2 var(--font-display);
+         letter-spacing: 1.4px;
+         color: #fffaf0
       }
 
       header h1 {
          max-width: 760px;
-         font: 600 clamp(42px, 6vw, 66px)/1.04 var(--font-display);
-         letter-spacing: -1.2px;
-         margin: 58px 0 14px
+         font: 600 clamp(30px, 4vw, 42px)/1.08 var(--font-display);
+         letter-spacing: -.4px;
+         margin: 22px 0 6px
       }
 
       header p {
-         color: var(--on-dark-muted);
+         color: #dde5df;
          max-width: 570px;
-         font-size: 16px;
-         line-height: 1.7;
+         font-size: 14px;
+         line-height: 1.55;
          margin: 0;
          font-weight: 500
       }
@@ -551,20 +555,16 @@
          .grid {
             grid-template-columns: repeat(2, 1fr)
          }
-
-         header h1 {
-            margin-top: 48px
-         }
       }
 
       @media(max-width:520px) {
          header {
-            padding: 22px 18px 42px
+            padding: 16px 18px 22px
          }
 
          header h1 {
-            font-size: 42px;
-            margin-top: 44px
+            font-size: 30px;
+            margin-top: 18px
          }
 
          header p {
