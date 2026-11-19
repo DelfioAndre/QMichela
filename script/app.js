@@ -31,7 +31,7 @@ function renderCats() { $("cats").innerHTML = cats.map(c => `<button class="cat 
 function render() { let q = $("search").value.toLocaleLowerCase("pt"); let list = PRODUCTS.filter(x => (category === "Todos" || x.c === category) && (`${x.n} ${x.d} ${x.c}`).toLocaleLowerCase("pt").includes(q)); $("heading").textContent = category === "Todos" ? "O nosso menu" : category; $("items").innerHTML = list.length ? list.map(x => `<article class="card"><img class="photo" src="${x.image}" alt="${x.n}" loading="lazy"><div class="body"><h3>${x.n}</h3><div class="desc">${x.d}</div><div class="foot"><span class="price">${x.p > 0 ? money(x.p) : "Consulte o preço"}</span><button class="add" data-add="${x.id}">Pedir</button></div></div></article>`).join("") : "<p class='empty'>Não foram encontrados produtos.</p>"; document.querySelectorAll("[data-add]").forEach(b => b.onclick = () => { cart[b.dataset.add] = (cart[b.dataset.add] || 0) + 1; update(); showToast("Produto adicionado ao pedido"); }) }
 function update() { let count = Object.values(cart).reduce((a, b) => a + b, 0); $("count").textContent = count; let entries = Object.entries(cart); $("lines").innerHTML = entries.length ? entries.map(([id, n]) => { let p = PRODUCTS.find(x => x.id == id); return `<div class="line"><span><b>${p.n}</b><br><small>${p.p ? money(p.p) : "Consulte o preço"}</small></span><span class="qty"><button data-dec="${id}" aria-label="Remover uma unidade de ${p.n}">−</button>${n}<button data-inc="${id}" aria-label="Adicionar uma unidade de ${p.n}">+</button></span></div>` }).join("") : "<p class='empty'>O pedido ainda está vazio.</p>"; let hasUnpricedItems = entries.some(([id]) => !PRODUCTS.find(x => x.id == id).p); $("total").textContent = hasUnpricedItems ? "A confirmar" : money(entries.reduce((s, [id, n]) => s + PRODUCTS.find(x => x.id == id).p * n, 0)); document.querySelectorAll("[data-dec]").forEach(b => b.onclick = () => change(b.dataset.dec, -1)); document.querySelectorAll("[data-inc]").forEach(b => b.onclick = () => change(b.dataset.inc, 1)); $("clearCart").disabled = !entries.length; }
 function change(id, n) { cart[id] = (cart[id] || 0) + n; if (cart[id] <= 0) delete cart[id]; update() }
-$("search").oninput = render; $("open").onclick = () => $("overlay").classList.add("open"); $("close").onclick = () => $("overlay").classList.remove("open"); $("overlay").onclick = e => { if (e.target === $("overlay")) $("overlay").classList.remove("open") };
+$("search").oninput = render; $("open").onclick = () => $("overlay").showModal(); $("close").onclick = () => $("overlay").close(); $("overlay").onclick = e => { if (e.target === $("overlay")) $("overlay").close() };
 if (/^258\d{9}$/.test(CONFIG.whatsapp)) {
     $("whatsapp").disabled = false;
     $("whatsapp").textContent = "Pedir pelo WhatsApp";
@@ -52,7 +52,7 @@ if (!/^258\d{9}$/.test(CONFIG.whatsapp)) {
 $("waiter").onclick = () => {
     if (!Object.keys(cart).length) return showToast("Adicione produtos ao pedido primeiro");
     showToast("Pedido pronto para mostrar à equipa");
-    $("overlay").classList.remove("open");
+    $("overlay").close();
 };
 $("clearCart").onclick = () => { cart = {}; update(); showToast("Pedido limpo"); };
 renderCats(); render(); update();

@@ -31,10 +31,10 @@
          equipa para confirmar disponibilidade, preços e detalhes.</div>
    </main>
    <footer>Quinta Michela • Restaurante, lazer e experiências</footer>
-   <div class="overlay" id="overlay">
+   <dialog class="overlay" id="overlay" aria-labelledby="order-title">
       <div class="modal">
          <div class="modalhead">
-            <h2>O seu pedido</h2><button class="close" id="close" aria-label="Fechar pedido">×</button>
+            <h2 id="order-title">O seu pedido</h2><button class="close" id="close" aria-label="Fechar pedido">×</button>
          </div>
          <div id="lines"></div>
          <div class="total"><span>Total estimado</span><span id="total">A confirmar</span></div>
@@ -48,7 +48,7 @@
          </div>
          <p class="modalnote" id="modalnote">Para concluir o pedido, mostre esta selecção a um colaborador.</p>
       </div>
-   </div>
+   </dialog>
    <div class="toast" id="toast" aria-live="polite"></div>
    <script src="script/app.js"></script>
 </body >
