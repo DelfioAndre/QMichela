@@ -1,37 +1,37 @@
       @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
       :root {
-         --g: #344638;
-         --g-hover: #465a49;
-         --accent: #b96545;
-         --accent-hover: #a85538;
-         --accent-soft: #f4e7df;
-         --bg: #f5f1e8;
-         --surface: #fffcf6;
-         --sage: #e9ece4;
-         --sage-hover: #dde3d8;
-         --forest-dark: #25362d;
-         --forest-light: #465849;
-         --on-dark: #f8f4eb;
-         --on-dark-muted: #e2e5d9;
-         --on-dark-soft: #e2e5d9;
-         --on-dark-border: #aab7a8;
-         --notice-text: #724936;
-         --notice-border: #e7cdbf;
-         --disabled: #a3a69c;
-         --category-text: #50584d;
-         --category-border-hover: #9da997;
-         --add-border: #e2c8ba;
-         --add-border-hover: #d6ad99;
-         --image-sage: #e1e5da;
-         --image-cream: #f1e4d6;
-         --shadow-soft: #3446380d;
-         --shadow-card: #3446380d;
-         --shadow-hover: #3446381c;
-         --overlay: #25362da6;
-         --muted: #6e7167;
-         --line: #e7e1d5;
-         --ink: #292c26;
+         --g: #244e57;
+         --g-hover: #183a43;
+         --accent: #c7a95c;
+         --accent-hover: #a98a46;
+         --accent-soft: #f3ecd8;
+         --bg: #f3efe5;
+         --surface: #fffdf8;
+         --sage: #e8ece7;
+         --sage-hover: #dce4df;
+         --forest-dark: #183a43;
+         --forest-light: #3e6970;
+         --on-dark: #fffaf0;
+         --on-dark-muted: #dde5df;
+         --on-dark-soft: #e8eee9;
+         --on-dark-border: #b9c6c1;
+         --notice-text: #5f522f;
+         --notice-border: #d9c99c;
+         --disabled: #98a29f;
+         --category-text: #536268;
+         --category-border-hover: #c3b47f;
+         --add-border: #dac98f;
+         --add-border-hover: #c7a95c;
+         --image-sage: #dde6e2;
+         --image-cream: #efe8d3;
+         --shadow-soft: #183a430d;
+         --shadow-card: #183a430d;
+         --shadow-hover: #183a431c;
+         --overlay: #183a43a6;
+         --muted: #68777a;
+         --line: #e3e4da;
+         --ink: #26383b;
          --font-body: "Manrope", "Segoe UI", Arial, sans-serif;
          --font-display: "Cormorant Garamond", Georgia, serif;
       }
@@ -43,8 +43,8 @@
       body {
          margin: 0;
          background:
-            radial-gradient(circle at top, rgba(185, 101, 69, .12), transparent 30%),
-            linear-gradient(180deg, #f8f3ea 0%, var(--bg) 100%);
+            radial-gradient(circle at top, rgba(199,169,92,.10), transparent 30%),
+            linear-gradient(180deg, #faf7ef 0%, var(--bg) 100%);
          color: var(--ink);
          font-family: var(--font-body);
          font-weight: 500;
@@ -129,7 +129,7 @@
       }
 
       .notice {
-         background: linear-gradient(135deg, rgba(244, 231, 223, .9), rgba(255, 255, 255, .92));
+         background: linear-gradient(135deg, rgba(243, 236, 216, .92), rgba(255, 253, 248, .94));
          border: 1px solid var(--notice-border);
          color: var(--notice-text);
          padding: 13px 16px;
@@ -148,7 +148,7 @@
          top: 14px;
          z-index: 6;
          padding: 10px 0;
-         background: linear-gradient(180deg, rgba(245, 241, 232, .96), rgba(245, 241, 232, .78));
+         background: linear-gradient(180deg, rgba(250, 247, 239, .96), rgba(243, 239, 229, .78));
          backdrop-filter: blur(8px);
          -webkit-backdrop-filter: blur(8px)
       }
@@ -156,12 +156,12 @@
       .toolbar input {
          flex: 1;
          min-width: 0;
-         border: 1px solid rgba(52, 70, 56, .12);
+         border: 1px solid rgba(36,78,87,.12);
          padding: 14px 16px;
          border-radius: 12px;
          font-size: 14px;
          background: rgba(255,255,255,.96);
-         box-shadow: 0 10px 22px rgba(52, 70, 56, .06);
+         box-shadow: 0 10px 22px rgba(24,58,67,.06);
          color: var(--ink)
       }
 
@@ -210,7 +210,7 @@
          position: sticky;
          top: 78px;
          z-index: 5;
-         background: linear-gradient(180deg, rgba(245, 241, 232, .92), rgba(245, 241, 232, .72));
+         background: linear-gradient(180deg, rgba(250, 247, 239, .92), rgba(243, 239, 229, .72));
          backdrop-filter: blur(8px);
          -webkit-backdrop-filter: blur(8px)
       }
@@ -220,7 +220,7 @@
       }
 
       .cat {
-         border: 1px solid rgba(52, 70, 56, .12);
+         border: 1px solid rgba(36,78,87,.12);
          background: rgba(255,255,255,.7);
          border-radius: 24px;
          padding: 10px 16px;
@@ -263,8 +263,8 @@
       }
 
       .card {
-         background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,252,246,.96));
-         border: 1px solid rgba(52, 70, 56, .08);
+         background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,253,248,.96));
+         border: 1px solid rgba(36,78,87,.08);
          border-radius: 18px;
          overflow: hidden;
          box-shadow: 0 16px 28px rgba(52, 70, 56, .08);
@@ -325,7 +325,7 @@
       }
 
       .add {
-         background: linear-gradient(180deg, var(--accent-soft), #f1d8c8);
+         background: linear-gradient(180deg, var(--accent-soft), #ebe0c0);
          border: 1px solid var(--add-border);
          color: var(--accent-hover);
          border-radius: 10px;
@@ -334,14 +334,14 @@
          white-space: nowrap;
          transition: background .2s, border-color .2s, transform .2s, box-shadow .2s;
          letter-spacing: .02em;
-         box-shadow: 0 8px 18px rgba(185, 101, 69, .08)
+         box-shadow: 0 8px 18px rgba(199, 169, 92, .10)
       }
 
       .add:hover {
-         background: linear-gradient(180deg, #f4dfd2, #efd0bf);
+         background: linear-gradient(180deg, #f5edda, #e6d6a8);
          border-color: var(--add-border-hover);
          transform: translateY(-1px);
-         box-shadow: 0 10px 18px rgba(185, 101, 69, .12)
+         box-shadow: 0 10px 18px rgba(199, 169, 92, .16)
       }
 
       .empty {
@@ -352,8 +352,8 @@
       }
 
       .info {
-         background: linear-gradient(180deg, rgba(233, 236, 228, .9), rgba(233, 236, 228, .7));
-         border: 1px solid rgba(52, 70, 56, .08);
+         background: linear-gradient(180deg, rgba(232,236,231,.92), rgba(232,236,231,.72));
+         border: 1px solid rgba(36,78,87,.08);
          border-radius: 16px;
          padding: 20px;
          margin-top: 30px;
@@ -394,19 +394,19 @@
       }
 
       .overlay::backdrop {
-         background: rgba(37, 54, 45, .58);
+         background: rgba(24,58,67,.62);
          backdrop-filter: blur(4px)
       }
 
       .modal {
-         background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,250,246,.98));
-         border: 1px solid rgba(52, 70, 56, .08);
+         background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,253,248,.98));
+         border: 1px solid rgba(36,78,87,.08);
          border-radius: 20px;
          padding: 22px;
          width: min(580px, 100%);
          max-height: 88vh;
          overflow: auto;
-         box-shadow: 0 28px 90px rgba(37, 54, 45, .28);
+         box-shadow: 0 28px 90px rgba(24,58,67,.28);
       }
 
       .modalhead {
