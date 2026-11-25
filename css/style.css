@@ -80,13 +80,10 @@
       .mark {
          border: 1px solid rgba(207,178,112,.58);
          border-radius: 50%;
-         width: 38px;
-         height: 38px;
-         display: grid;
-         place-items: center;
-         color: #cfb270;
-         font-size: 18px;
-         background: rgba(255,250,240,.06);
+         width: 54px;
+         height: 54px;
+         object-fit: cover;
+         background: #fff;
          box-shadow: 0 4px 14px rgba(7,25,29,.18)
       }
 
