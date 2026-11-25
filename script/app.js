@@ -18,6 +18,12 @@ const PRODUCTS = [
     { id: 11, n: "Panquecas", c: "Sobremesas", d: "Consulte as opções disponíveis.", p: randomPrice(180, 420), image: "imagens/panquecas.png" }
 ];
 let category = "Todos", cart = {}, itemDetails = {}; const $ = id => document.getElementById(id), cats = CATEGORIES;
+const rawTable = new URLSearchParams(window.location.search).get("mesa");
+const tableNumber = rawTable && /^[A-Za-z0-9À-ÿ][A-Za-z0-9À-ÿ._-]{0,19}$/.test(rawTable.trim()) ? rawTable.trim() : "";
+$("table").value = tableNumber ? "Mesa " + tableNumber : "Mesa não identificada";
+$("tableNotice").textContent = tableNumber
+    ? "Está na " + $("table").value + ". Esta mesa será incluída automaticamente no pedido."
+    : "Mesa não identificada. Abra o menu através do QR Code da sua mesa para associar o pedido ao local correcto.";
 const money = n => Number(n).toLocaleString("pt-MZ") + " " + CONFIG.currency;
 const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[char]));
 function showToast(message) {
@@ -43,7 +49,7 @@ if (/^258\d{9}$/.test(CONFIG.whatsapp)) {
         let rows = entries.map(([id, n]) => { let p = PRODUCTS.find(x => x.id == id); let detail = itemDetails[id]; let details = detail && (detail.action || detail.note) ? `\n  Detalhes: ${[detail.action, detail.note].filter(Boolean).join(" — ")}` : ""; return `• ${n} x ${p.n} — ${p.p ? money(p.p) : "preço a confirmar"}${details}` });
         let hasUnpricedItems = entries.some(([id]) => !PRODUCTS.find(x => x.id == id).p);
         let total = entries.reduce((s, [id, n]) => s + PRODUCTS.find(x => x.id == id).p * n, 0);
-        let msg = ["Olá, Quinta Michela! Gostaria de confirmar este pedido:", ...rows, "Total estimado: " + (hasUnpricedItems ? "A confirmar" : money(total)), "Nome: " + ($("customer").value || "Não indicado"), "Mesa/local: " + ($("table").value || "A confirmar"), "Observações: " + ($("notes").value || "Nenhuma")].join("\n");
+        let msg = ["Olá, Quinta Michela! Gostaria de confirmar este pedido:", ...rows, "Total estimado: " + (hasUnpricedItems ? "A confirmar" : money(total)), "Nome: " + ($("customer").value || "Não indicado"), "Mesa: " + $("table").value, "Observações: " + ($("notes").value || "Nenhuma")].join("\n");
         window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg), "_blank");
     };
 }

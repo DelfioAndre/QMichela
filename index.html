@@ -18,11 +18,12 @@
             <div><small>RESTAURANTE • LAZER • EXPERIÊNCIAS</small><strong>QUINTA MICHELA</strong></div>
          </div>
          <h1>Sabores para bons momentos.</h1>
-         <p>Explore o nosso menu, escolha os seus favoritos e prepare o seu pedido para partilhar com a nossa equipa.</p>
+         <p>Explore o nosso menu e escolha os seus favoritos. A mesa do QR Code será associada automaticamente ao pedido.</p>
       </div>
    </header>
    <main>
       <div class="notice">A disponibilidade e os preços podem variar. Confirme os detalhes com a nossa equipa.</div>
+      <div class="notice" id="tableNotice" aria-live="polite"></div>
       <div class="toolbar"><input id="search" placeholder="Pesquisar no menu..." aria-label="Pesquisar no menu"><button
             class="cartbtn" id="open">Meu pedido (<span id="count">0</span>)</button></div>
       <nav class="cats" id="cats" aria-label="Categorias do menu"></nav>
@@ -39,8 +40,8 @@
          </div>
          <div id="lines"></div>
          <div class="total"><span>Total estimado</span><span id="total">A confirmar</span></div>
-         <label>Nome (opcional)<input id="customer" placeholder="O seu nome"></label><label>Mesa / local
-            (opcional)<input id="table" placeholder="Ex.: Mesa 4 ou piscina"></label><label>Observações<textarea
+         <label>Nome (opcional)<input id="customer" placeholder="O seu nome"></label><label>Mesa identificada pelo QR Code
+            <input id="table" readonly></label><label>Observações<textarea
                id="notes" placeholder="Alguma indicação adicional?"></textarea></label>
          <div class="actions">
             <button class="send" id="whatsapp" disabled>WhatsApp em breve</button>

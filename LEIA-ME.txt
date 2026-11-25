@@ -19,6 +19,7 @@ Abra `index.html` directamente no navegador. Não precisa de instalar dependênc
 
 ## Publicação e QR Code
 Publique o ficheiro num alojamento estático (GitHub Pages ou Vercel). Só depois de obter o endereço público definitivo deve ser gerado o QR Code para impressão.
+Cada mesa deve ter um QR Code próprio, com o número da mesa no endereço. Por exemplo, para a mesa 4, use `https://seu-dominio/?mesa=4`. O menu mostra essa mesa e inclui-a automaticamente no pedido enviado pelo WhatsApp.
 
 ## Limitação da primeira versão
 “Chamar empregado” apenas orienta o cliente a mostrar a selecção presencialmente. Para notificar a equipa automaticamente será necessário um painel de pedidos ou integração adicional.
