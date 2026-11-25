@@ -40,6 +40,10 @@
          box-sizing: border-box
       }
 
+      [hidden] {
+         display: none !important
+      }
+
       body {
          margin: 0;
          background:
@@ -537,7 +541,8 @@
       }
 
       label input,
-      label textarea {
+      label textarea,
+      label select {
          display: block;
          width: 100%;
          margin-top: 6px;
